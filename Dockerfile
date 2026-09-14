@@ -5,7 +5,7 @@ FROM base AS builder
 RUN apk add --no-cache gcompat
 WORKDIR /app
 
-COPY package*json tsconfig.json src ./
+COPY package*json pnpm-workspace.yaml tsconfig.json src ./
 
 RUN npm install -g pnpm
 RUN pnpm i && \
